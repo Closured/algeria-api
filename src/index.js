@@ -2,7 +2,7 @@ import Koa from "koa";
 import { router } from "./routes/router.js";
 import json from "koa-json";
 import dotenv from "dotenv";
-const api = new Koa();
+export const api = new Koa();
 dotenv.config();
 
 api.use(json()).use(router.routes()).use(router.allowedMethods());

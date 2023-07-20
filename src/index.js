@@ -6,7 +6,11 @@ import dotenv from "dotenv";
 export const api = new Koa();
 dotenv.config();
 
-api.use(cors());
+api.use(cors({ 
+    origin: "*",  
+    methods: "GET",
+    maxAge: 30
+}));
 
 api.use(json()).use(router.routes()).use(router.allowedMethods());
 
